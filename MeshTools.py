@@ -5,6 +5,7 @@ DSPotential
 """
 
 import numpy as np
+from PotentialFlows.Uniform import UniformFlow
 
 def setupGrid(n, xbounds, ybounds):
     """
@@ -37,3 +38,24 @@ def setupGrid(n, xbounds, ybounds):
     X, Y = np.meshgrid(x, y)
     
     return X, Y
+
+def computeCp(u, v, uniformFlow:UniformFlow):
+    """
+    Returns the pressure coefficient distribution
+    
+    Parameters
+    ----------
+    u: ndarray
+        x-component of the velocity field
+    v: ndarray
+        y-component of the velocity field
+    uniformFlow: UniformFlow
+        UniformFlow object
+    
+    Returns
+    -------
+    Cp: ndarray
+        Pressure coefficient distribution
+    """
+    Cp = 1 - (u**2 + v**2) / uniformFlow.strength**2
+    return Cp

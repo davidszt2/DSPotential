@@ -4,7 +4,7 @@ Main file to call functions and compute potential flow solutions
 DSPotential
 """
 
-from MeshTools import setupGrid
+from MeshTools import setupGrid, computeCp
 from PotentialFlows.SourceSink import SourceSink
 from PotentialFlows.Uniform import UniformFlow
 from PotentialFlows.RankineSemiOval import RankineSemiOval
@@ -13,7 +13,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Create meshgrid
-n = 50
+n = 200
 xbounds = np.array([-2, 2])
 ybounds = np.array([-1, 1])
 
@@ -25,7 +25,7 @@ source2 = SourceSink(1.0, -0.5, 0.0)
 sink1 = SourceSink(-1.0, 0.5, 0.0)
 uniform1 = UniformFlow(1.0, 0.0)
 semiOval1 = RankineSemiOval(0.25, 1.0)
-oval1 = RankineOval(1.0, 1.0, 1.0)
+oval1 = RankineOval(3.0, 2.0, 1.0)
 
 uSource1, vSource1 = source1.velocityField(X, Y)
 uSource2, vSource2 = source2.velocityField(X, Y)
@@ -62,6 +62,9 @@ plt.scatter(sink1.x, sink1.y, color='g', marker='o', s=80)
 plt.figure()
 plt.title("Example 4: Rankine Oval")
 plt.streamplot(X, Y, uOval1, vOval1, density=2, linewidth=1, arrowsize=2, arrowstyle='->')
+contf = plt.contourf(X, Y, computeCp(uOval1, vOval1, oval1.uniform), levels=np.linspace(-2, 1, 100), extend='both')
+plt.contour(X, Y, oval1.streamFunction(X, Y), levels=[-0.5, 0.0, 0.5], colors='r', linestyles='solid')
+plt.colorbar(contf)
 plt.scatter(source1.x, source1.y, color='r', marker='o', s=80)
 plt.scatter(sink1.x, sink1.y, color='g', marker='o', s=80)
 
