@@ -1,0 +1,134 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb, bm}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\title{DSPotential Theory Document}
+\author{ David Moeller Sztajnbok }
+\date{March, 2024}
+
+\begin{document}
+\maketitle
+
+%--Paper--
+
+\section{Vector Calculus Review}
+Before diving into the differential equations that govern fluid flow, particularly the flow we are interested in - irrotational, incompressible flow - a brief review of vector calculus is useful for the math that is to follow. This document will be void of complicated derivations, but will still include basic vector calculus concepts and notation. Below is a brief review of these concepts. \\
+\subsection{Total Derivative}
+\noindent
+In single-variable calculus, functions are dependent on one variable only. Therefore, some function $f(x)$ has as its derivative $\frac{df}{dx}$ and will be a function of x and x only (or some constant.)\\ \\
+\noindent
+In multivariable calculus, however, functions are dependent on more than one variable. It is typically the case in fluid flow that quantities are functions of space ($x, y,$ and $z$) as well as time ($t$) which can be typically written as $f(x, y, z, t)$. However, the one of the variables in the function can be itself a function of another variable. It is imperative in that case to make use of the chain rule when differentiating the function, just as was the case in single-variable calculus when differentiating compound functions. \\ \\
+\noindent
+Let us consider a practical example. The acceleration of a fluid particle is given by:
+
+\begin{equation*}
+    \vec{\bm{a}} = \frac{d}{dt}[\vec{\bm{u}}(\vec{\bm{r}}, t)]
+\end{equation*}
+
+\noindent
+Where $\vec{\bm{r}}$ is the position vector given by:
+
+\begin{equation*}
+    \vec{\bm{r}} = \begin{bmatrix}
+                    r_x \\
+                    r_y \\
+                    r_z \\     
+                    \end{bmatrix}
+\end{equation*}
+
+\noindent
+And the components of the velocity vector $\vec{\bm{u}}$ are given by:
+
+\begin{equation*}
+    \vec{\bm{u}} = \begin{bmatrix}
+                    u \\
+                    v \\
+                    w \\     
+                    \end{bmatrix}
+\end{equation*}
+
+\noindent
+The total derivative $\frac{d}{dt}[\vec{\bm{u}}(\vec{\bm{r}}, t)]$ must account for changes in position as functions of time, as well as changes in the velocity components as functions of position and time. The chain rule must be applied The total derivative is from now on denoted $\frac{D}{Dt}$ and is given by:
+
+\begin{equation*}
+    \frac{D\vec{\bm{u}}}{Dt} = \frac{\partial\vec{\bm{u}}}{\partial t} + \frac{\partial\vec{\bm{u}}}{\partial x}\frac{\partial x}{\partial t} + \frac{\partial\vec{\bm{u}}}{\partial y}\frac{\partial y}{\partial t} + \frac{\partial\vec{\bm{u}}}{\partial z}\frac{\partial z}{\partial t}
+\end{equation*}
+
+\noindent
+Note that in the equation above, $r_x, r_y$ and $r_z$ are simply $x, y$ and $z$ since we will have the velocity not as a function of the particle's position (Lagrangian approach to fluid flow analysis) but rather as a function of the space coordinates themselves (Eulerian approach to fluid flow analysis.) \\ \\
+\noindent
+The expression can be simplified. Note that $\frac{\partial x}{\partial t}$, $\frac{\partial y}{\partial t}$, and $\frac{\partial z}{\partial t}$ are, respectively, the $x, y, $ and $z$ components of the velocity vector, i.e., $u, v,$ and $w$. Additionally, recall the gradient operator $\nabla$:
+
+\begin{equation*}
+    \nabla = \begin{bmatrix}
+                \frac{\partial}{\partial x} \\
+                \frac{\partial}{\partial y} \\
+                \frac{\partial}{\partial z} \\     
+                \end{bmatrix}
+\end{equation*}
+
+\noindent
+Such that:
+
+\begin{equation*}
+    \nabla \vec{\bm{u}} = \begin{bmatrix}
+                            \frac{\partial\vec{\bm{u}}}{\partial x} \\
+                            \frac{\partial\vec{\bm{u}}}{\partial y} \\
+                            \frac{\partial\vec{\bm{u}}}{\partial z} \\
+                            \end{bmatrix}
+\end{equation*}
+
+\noindent
+And the dot product of the velocity vector itself with the gradient of the velocity vector is given by:
+
+\begin{equation*}
+    \vec{\bm{u}} \cdot \nabla \vec{\bm{u}} = u\frac{\partial\vec{\bm{u}}}{\partial x} + v\frac{\partial\vec{\bm{u}}}{\partial y} + w\frac{\partial\vec{\bm{u}}}{\partial z}
+\end{equation*}
+
+\noindent
+Note, therefore, that the total derivative can be simplified to:
+
+\begin{equation*}
+    \frac{D\vec{\bm{u}}}{Dt} = \frac{\partial\vec{\bm{u}}}{\partial t} + \vec{\bm{u}} \cdot \nabla \vec{\bm{u}}
+\end{equation*}
+
+\noindent
+In fact, the total derivative of any scalar or vector-valued quantity can be written as:
+
+\begin{equation*}
+    \frac{D(\blacksquare)}{Dt} = \frac{\partial(\blacksquare)}{\partial t} + \vec{\bm{u}} \cdot \nabla (\blacksquare)
+\end{equation*} \\
+
+\subsection{Curl and Divergence}
+\noindent
+Another important set of concepts important in vector calculus that involve the gradient operator, $\nabla$, are the curl and divergence of a vector field. The curl of a vector field $\vec{\bm{A}}$ is given by:
+
+\begin{equation*}
+    \textnormal{curl}(\vec{\bm{A}}) = \nabla \times \vec{\bm{A}}
+\end{equation*}
+
+\noindent
+While the divergence of a vector field $\vec{\bm{A}}$ is given by:
+
+\begin{equation*}
+    \textnormal{div}(\vec{\bm{A}}) = \nabla \cdot \vec{\bm{A}}
+\end{equation*}
+
+\noindent
+This will show itself useful when we define the concepts of rotationality, as well as the fundamental condition for the conservation of mass. \\
+
+\pagebreak
+\section{Differential Form of Conservation Laws}
+Lorem Ipsum \\
+
+%--/Paper--
+
+\end{document}
