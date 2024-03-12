@@ -21,6 +21,187 @@
 
 \section{Brief Vector Calculus Review}
 Before diving into the differential equations that govern fluid flow, particularly the flow we are interested in - irrotational, incompressible flow - a brief review of vector calculus is useful for the math that is to follow. This document will be void of complicated derivations, but will still include basic vector calculus concepts and notation. Below is a brief review of these concepts. \\
+\subsection{Vector Notation}
+This document will use standardized notation throughout, some of which is presented below.\\ \\
+\noindent
+Vectors are denoted by an arrow above them and are also bolded. A velocity vector, for instance, is denoted $\vec{\bm{u}}$ while a scalar quantity, density, is denoted $\rho$.\\ \\
+\noindent
+Vectors are presented in matrix form to more easily visualize operations like dot products, cross products, and vector multiplication. They are presented as an $nx1$ matrix, that is, a column vector. The example of velocity vector is shown below:
+
+\begin{equation*}
+    \vec{\bm{u}} = \begin{bmatrix}
+                    u \\
+                    v \\
+                    w \\
+                    \end{bmatrix}
+\end{equation*}
+
+\noindent
+Where $u, v, $ and $w$ are the $x, y, $ and $z$ components of vector $\vec{\bm{u}}$. \\
+
+\subsection{Vector Operations}
+It is important to remember the different vector operations. Addition and subtraction are ommited from the discussion below. The focus is given to the scalar, vectorial, and simple multiplication of vectors, also known as the dot, cross, and simple products. 
+\subsubsection{The Dot Product}
+Consider two vectors $\vec{\bm{a}}$ and $\vec{\bm{b}}$ such that:
+
+\begin{equation*}
+    \vec{\bm{a}} = \begin{bmatrix}
+        a_x \\
+        a_y \\
+        a_z \\
+    \end{bmatrix}
+\end{equation*}
+
+And
+
+\begin{equation*}
+    \vec{\bm{b}} = \begin{bmatrix}
+        b_x \\
+        b_y \\
+        b_z \\
+    \end{bmatrix}
+\end{equation*}
+
+\noindent
+Then the dot product between them is:
+
+\begin{equation*}
+    \vec{\bm{a}} \cdot \vec{\bm{b}} = a_xb_x + a_yb_y + a_zb_z
+\end{equation*}
+
+\noindent
+With the geometric meaning that the dot product is the magnitude of the projection of $\vec{\bm{a}}$ onto $\vec{\bm{b}}$, also given by:
+
+\begin{equation*}
+    \vec{\bm{a}} \cdot \vec{\bm{b}} = \bar{\vec{\bm{a}}}\bar{\vec{\bm{b}}}\cos{\theta}
+\end{equation*}
+
+\begin{equation*}
+    \vec{\bm{a}} \cdot \vec{\bm{b}} = \begin{vmatrix}
+        \vec{\bm{a}}
+    \end{vmatrix}\begin{vmatrix}
+        \vec{\bm{b}}
+    \end{vmatrix}
+    \cos{\theta}
+\end{equation*}
+
+\noindent
+Where $\theta$ is the angle formed between $\vec{\bm{a}}$ and $\vec{\bm{b}}$.\\ \\ \\
+\noindent
+\emph{Note: the dot product is an operation between two vectors and it results in a scalar. It is not to be confused with the multiplication of a scalar by a vector:}
+\begin{equation*}
+    c\vec{\bm{a}} = \begin{bmatrix}
+        ca_x \\
+        ca_y \\
+        ca_z \\
+    \end{bmatrix}
+\end{equation*}
+\emph{Where $c$ is a constant. The operation above is the product between a scalar and a vector, and results in a vector! So be weary of the dots in the text below.}
+
+\subsubsection{The Cross Product}
+Consider the same vectors as before. The cross product between them is:
+
+\begin{equation*}
+    \vec{\bm{a}} \times \vec{\bm{b}} = \begin{vmatrix}
+        \hat{i} & \hat{j} & \hat{k} \\
+        a_x & a_y & a_z \\
+        b_x & b_y & b_z
+    \end{vmatrix} = \hat{i}\begin{vmatrix}
+        a_y&a_z\\b_y&b_z
+    \end{vmatrix} - \hat{j}\begin{vmatrix}
+        a_x&a_z\\b_x&b_z
+    \end{vmatrix} + \hat{k}\begin{vmatrix}
+        a_x&a_y\\b_x&b_y
+    \end{vmatrix} = \hat{i}(a_yb_z - a_zb_y) + \hat{j}(a_zb_x-a_xb_z) + \hat{k}(a_xb_y - a_yb_x)
+\end{equation*}\\
+
+\noindent
+With the geometric meaning that the cross product is a vector normal to both $\vec{\bm{a}}$ and $\vec{\bm{b}}$ and its magnitude is the area formed by the parallellepiped between $\vec{\bm{a}}$ and $\vec{\bm{b}}$. This magnitude is:
+
+\begin{equation*}
+    \vec{\bm{a}} \times \vec{\bm{b}} = \begin{vmatrix}
+        \vec{\bm{a}}
+    \end{vmatrix}\begin{vmatrix}
+        \vec{\bm{b}}
+    \end{vmatrix}
+    \sin{\theta}
+\end{equation*}\\
+
+\noindent
+Where $\theta$ is the angle between the vectors. Note that the cross product is an operation between two vectors that yields another vector.
+
+\subsection{Scalar vs. Vector Fields}
+It is important to make a subtle yet important distinction before speaking of derivatives. In fluid flow, we are interested in calculating different properties at different points in space and time. Therefore, quantities will be functions of space ($x, y, \textnormal{and}\ z$) and time ($t$.) \emph{However, these quantities can be scalar and/or vectors.}\\\\
+\noindent
+A vector field is a function of space and time wherein each point in space and time defines a vector. The best example and perhaps the most relevant here is the velocity vector, $\vec{\bm{u}}$:
+
+\begin{equation*}
+    \vec{\bm{u}} = u\hat{i} + v\hat{j} + w\hat{k}
+\end{equation*}\\
+\noindent
+Wherein each component of the velocity is a function of space and time:
+
+
+\begin{eqnarray*}
+    u = u(x, y, z, t)\\
+    v = v(x, y, z, t)\\
+    w = w(x, y, z, t)
+\end{eqnarray*}\\
+\noindent
+Therefore at each point in space at a given time, each component of the velocity vector at that point in space and time is defined, and a vector is therefore defined at that point.\\ \\
+\noindent
+Scalar fields, on the other hand, are scalars defined as functions of space and time. Thus, instead of a point in space and time defining three components that form a vector, only a scalar is defined. The best examples are pressure and temperature:
+\begin{eqnarray*}
+    P = P(x, y, z, t)\\
+    T = T(x, y, z, t)\\
+\end{eqnarray*}
+
+\subsection{The Gradient of a Scalar Field}
+Consider a scalar field $p(x,y,z)$. It defines a pressure (scalar) at every point in space. We are often interested in the direction at which the pressure increases the most, and the rate at which it increases. This is given by the gradient of the scalar field, $\nabla p$. \\ \\
+\noindent
+The gradient of a scalar field $\nabla p$ is defined as the vector with the following properties:
+\begin{enumerate}
+    \item Its direction is towards the greatest increase in the scalar field and;
+    \item Its magnitude is the rate of increase of the scalar field in that direction.
+\end{enumerate}
+\noindent
+The gradient vector, $\nabla$ is defined as:
+\begin{equation*}
+    \nabla = \begin{bmatrix}
+                \frac{\partial}{\partial x} \\
+                \frac{\partial}{\partial y} \\
+                \frac{\partial}{\partial z} \\     
+                \end{bmatrix}
+\end{equation*}
+\noindent
+Such that the gradient of the scalar field is simply:
+\begin{equation*}
+    \nabla p = \begin{bmatrix}
+                \frac{\partial p}{\partial x} \\
+                \frac{\partial p}{\partial y} \\
+                \frac{\partial p}{\partial z} \\     
+                \end{bmatrix}
+\end{equation*}
+
+\subsection{Curl and Divergence}
+\noindent
+Another important set of concepts important in vector calculus that involve the gradient operator, $\nabla$, are the curl and divergence of a vector field. The curl of a vector field $\vec{\bm{A}}$ is given by:
+
+\begin{equation*}
+    \textnormal{curl}(\vec{\bm{A}}) = \nabla \times \vec{\bm{A}}
+\end{equation*}
+
+\noindent
+While the divergence of a vector field $\vec{\bm{A}}$ is given by:
+
+\begin{equation*}
+    \textnormal{div}(\vec{\bm{A}}) = \nabla \cdot \vec{\bm{A}}
+\end{equation*}
+
+\noindent
+This will show itself useful when we define the concepts of rotationality, as well as the fundamental condition for the conservation of mass. \\
+
+
 \subsection{Total Derivative}
 \noindent
 In single-variable calculus, functions are dependent on one variable only. Therefore, some function $f(x)$ has as its derivative $\frac{df}{dx}$ and will be a function of x and x only (or some constant.)\\ \\
@@ -79,54 +260,32 @@ The expression can be simplified. Note that $\frac{\partial x}{\partial t}$, $\f
 Such that:
 
 \begin{equation*}
-    \nabla \vec{\bm{u}} = \begin{bmatrix}
-                            \frac{\partial\vec{\bm{u}}}{\partial x} \\
-                            \frac{\partial\vec{\bm{u}}}{\partial y} \\
-                            \frac{\partial\vec{\bm{u}}}{\partial z} \\
-                            \end{bmatrix}
+    \vec{\bm{u}} \cdot \nabla = u \frac{\partial}{\partial x} + v \frac{\partial}{\partial y} + w \frac{\partial}{\partial z}
 \end{equation*}
 
 \noindent
-And the dot product of the velocity vector itself with the gradient of the velocity vector is given by:
+And the above times the velocity vector itself is:
 
 \begin{equation*}
-    \vec{\bm{u}} \cdot \nabla \vec{\bm{u}} = u\frac{\partial\vec{\bm{u}}}{\partial x} + v\frac{\partial\vec{\bm{u}}}{\partial y} + w\frac{\partial\vec{\bm{u}}}{\partial z}
+    (\vec{\bm{u}} \cdot \nabla)\vec{\bm{u}} = u \frac{\partial\vec{\bm{u}}}{\partial x} + v \frac{\partial\vec{\bm{u}}}{\partial y} + w \frac{\partial\vec{\bm{u}}}{\partial z} 
 \end{equation*}
 
 \noindent
 Note, therefore, that the total derivative can be simplified to:
 
 \begin{equation*}
-    \frac{D\vec{\bm{u}}}{Dt} = \frac{\partial\vec{\bm{u}}}{\partial t} + \vec{\bm{u}} \cdot \nabla \vec{\bm{u}}
+    \frac{D\vec{\bm{u}}}{Dt} = \frac{\partial\vec{\bm{u}}}{\partial t} + (\vec{\bm{u}} \cdot \nabla)\vec{\bm{u}}
 \end{equation*}
 
 \noindent
 In fact, the total derivative of any flow field quantity can be written as:
 
 \begin{equation*}
-    \frac{D(\blacksquare)}{Dt} = \frac{\partial(\blacksquare)}{\partial t} + \vec{\bm{u}} \cdot \nabla (\blacksquare)
+    \frac{D\phi}{Dt} = \frac{\partial\phi}{\partial t} + (\vec{\bm{u}} \cdot \nabla)\phi
 \end{equation*}
 
 \noindent
 And it applies to any variable, be it scalar-valued or vector-valued.\\
-
-\subsection{Curl and Divergence}
-\noindent
-Another important set of concepts important in vector calculus that involve the gradient operator, $\nabla$, are the curl and divergence of a vector field. The curl of a vector field $\vec{\bm{A}}$ is given by:
-
-\begin{equation*}
-    \textnormal{curl}(\vec{\bm{A}}) = \nabla \times \vec{\bm{A}}
-\end{equation*}
-
-\noindent
-While the divergence of a vector field $\vec{\bm{A}}$ is given by:
-
-\begin{equation*}
-    \textnormal{div}(\vec{\bm{A}}) = \nabla \cdot \vec{\bm{A}}
-\end{equation*}
-
-\noindent
-This will show itself useful when we define the concepts of rotationality, as well as the fundamental condition for the conservation of mass. \\
 
 \pagebreak
 \section{Differential Form of Conservation Laws}

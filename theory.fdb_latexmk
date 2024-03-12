@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1710034388.04456 "c:/Users/david/AeroPython/DSPotential/theory.tex" "theory.pdf" "theory" 1710034388.41265 0
-  "c:/Users/david/AeroPython/DSPotential/theory.tex" 1710034387 5935 6adcc887928e751f175e5439625ae0d2 ""
+["pdflatex"] 1710272399.04568 "c:/Users/david/AeroPython/DSPotential/theory.tex" "theory.pdf" "theory" 1710272399.57193 0
+  "c:/Users/david/AeroPython/DSPotential/theory.tex" 1710272398 12400 9693d6e2dd80bde5e59f2797b8e066b4 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1709983022 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1709983022 1120 200be8b775682cdf80acad4be5ef57e4 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1709983022 1004 54797486969f23fa377b128694d548df ""
@@ -30,6 +30,8 @@
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1709982990 1124 6c73e740cf17375f03eec0ee63599741 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1709982990 1116 933a60c408fc0a863a92debe84b2d294 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1709982990 1120 8b7d695260f3cff42e636090a8002094 ""
+  "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1709982990 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1709983022 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1709983022 32080 340ef9bf63678554ee606688e7b5339d ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1709983022 30251 6afa5cb1d0204815a708a080681d4674 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1709983022 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
@@ -39,8 +41,7 @@
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1709983022 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1709983022 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1709983022 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb" 1709983022 35479 2cca68718f15872e7cce1a8f6033b99b ""
-  "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1709983022 31764 459c573c03a4949a528c2cc7f557e217 ""
+  "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1709983022 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1709983022 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1709983022 13829 94730e64147574077f8ecfea9bb69af4 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd" 1709983022 961 6518c6525a34feb5e8250ffa91731cff ""
@@ -58,8 +59,8 @@
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1709983082 94259 aec9939469efac8f0cf917369f632359 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1709983088 6812498 97cf619dd73c227156607b0fd1a8ab1e ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf.cnf" 1709983002 903 164c5b127cd0d6dc91abad2f62421ea2 ""
-  "theory.aux" 1710034388 495 acc2ae8521534483703a1558a235f5fa "pdflatex"
-  "theory.tex" 1710034387 5935 6adcc887928e751f175e5439625ae0d2 ""
+  "theory.aux" 1710272399 1181 3a990119ad5f1b4eb572895f4b02fa13 "pdflatex"
+  "theory.tex" 1710272398 12400 9693d6e2dd80bde5e59f2797b8e066b4 ""
   (generated)
   "theory.aux"
   "theory.log"
