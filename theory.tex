@@ -196,11 +196,11 @@ While the divergence of a vector field $\vec{\bm{A}}$ is given by:
 
 \begin{equation*}
     \textnormal{div}(\vec{\bm{A}}) = \nabla \cdot \vec{\bm{A}}
-\end{equation*}
-
+\end{equation*} \\ 
+\noindent
+Note that both the curl and divergence operations are performed on vectors. However, the curl produces a vector while the divergence produces a scalar.\\ \\ 
 \noindent
 This will show itself useful when we define the concepts of rotationality, as well as the fundamental condition for the conservation of mass. \\
-
 
 \subsection{Total Derivative}
 \noindent
@@ -278,7 +278,7 @@ Note, therefore, that the total derivative can be simplified to:
 \end{equation*}
 
 \noindent
-In fact, the total derivative of any flow field quantity can be written as:
+In fact, the total derivative of any flow field quantity $\phi$ can be written as:
 
 \begin{equation*}
     \frac{D\phi}{Dt} = \frac{\partial\phi}{\partial t} + (\vec{\bm{u}} \cdot \nabla)\phi
@@ -286,6 +286,36 @@ In fact, the total derivative of any flow field quantity can be written as:
 
 \noindent
 And it applies to any variable, be it scalar-valued or vector-valued.\\
+
+\subsection{Theorems of Vector Calculus}
+Several theorems are studied in vector calculus, but the ones that relate the different types of integrals and their bounds are of particular interest to us. These are of great aid in the derivation of the differential equations that govern fluid flow.\\ \\
+\noindent
+The reader is encouraged to review the fundamental background behind these theorems - namely the definition and physical meaning of line, surface, and volume integrals - since they are beyond the scope of this document. However, the theorems themselves are presented below.\\
+
+\subsubsection{Stokes' Theorem}
+Consider an open surface $S$ bounded by a closed curve $C$ and a vector field $\vec{\bm{A}}$. Stokes' theorem relates the line integral of $\vec{\bm{A}}$ over the closed curve $C$ to the surface integral of the curl of $\vec{\bm{A}}$ over the surface $S$. Mathematically we write:
+
+\begin{equation*}
+    \oint_C \vec{\bm{A}} \cdot \vec{\bm{dr}} = \iint_S (\nabla \times \vec{\bm{A}}) \cdot \vec{\bm{dS}}
+\end{equation*}\\
+\noindent
+Which is a powerful tool, since it relates line integrals to surface integrals.\\
+
+\subsubsection{Divergence Theorem}
+Consider instead a volume $\nu$ bounded by a closed surface $S$ and a vector field $\vec{\bm{A}}$. The Divergence Theorem relates the surface integral of $\vec{\bm{A}}$ over the bounding surface to the volume integral of the divergence of $\vec{\bm{A}}$ over the volume $\nu$. Mathematically we write:
+
+\begin{equation*}
+    \iint_S \vec{\bm{A}} \cdot \vec{\bm{dS}} = \iiint_\nu (\nabla \cdot \vec{\bm{A}}) d\nu
+\end{equation*}\\
+\noindent
+Which is a powerful tool, since it relates surface integrals to volume integrals.\\
+
+\subsubsection{Gradient Theorem}
+An analogous theorem exists for the gradient of a scalar field. Consider again a volume $\nu$ bounded by a closed surface $S$ and instead a scalar field $p(x,y,z)$. The Gradient Theorem relates the surface integral of $p$ over $S$ to the volume integral of the gradient of $p$ over $\nu$. Mathematically we write:
+
+\begin{equation*}
+    \iint_S p \vec{\bm{dS}} = \iiint_\nu \nabla p\, d\nu
+\end{equation*}\\
 
 \pagebreak
 \section{Differential Form of Conservation Laws}
