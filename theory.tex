@@ -281,27 +281,27 @@ The reader is encouraged to review the fundamental background behind these theor
 \subsubsection{Stokes' Theorem}
 Consider an open surface $S$ bounded by a closed curve $C$ and a vector field $\vec{\bm{A}}$. Stokes' theorem relates the line integral of $\vec{\bm{A}}$ over the closed curve $C$ to the surface integral of the curl of $\vec{\bm{A}}$ over the surface $S$. Mathematically we write:
 
-\begin{equation*}
+\begin{equation}\label{stokesTheorem}
     \oint_C \vec{\bm{A}} \cdot \vec{\bm{dr}} = \iint_S (\nabla \times \vec{\bm{A}}) \cdot \vec{\bm{dS}}
-\end{equation*}\\
+\end{equation}\\
 \noindent
 Which is a powerful tool, since it relates line integrals to surface integrals.\\
 
 \subsubsection{Divergence Theorem}
 Consider instead a volume $\nu$ bounded by a closed surface $S$ and a vector field $\vec{\bm{A}}$. The Divergence Theorem relates the surface integral of $\vec{\bm{A}}$ over the bounding surface to the volume integral of the divergence of $\vec{\bm{A}}$ over the volume $\nu$. Mathematically we write:
 
-\begin{equation*}
+\begin{equation}\label{divergenceTheorem}
     \iint_S \vec{\bm{A}} \cdot \vec{\bm{dS}} = \iiint_\nu (\nabla \cdot \vec{\bm{A}}) d\nu
-\end{equation*}\\
+\end{equation}\\
 \noindent
 Which is a powerful tool, since it relates surface integrals to volume integrals.\\
 
 \subsubsection{Gradient Theorem}
 An analogous theorem exists for the gradient of a scalar field. Consider again a volume $\nu$ bounded by a closed surface $S$ and instead a scalar field $p(x,y,z)$. The Gradient Theorem relates the surface integral of $p$ over $S$ to the volume integral of the gradient of $p$ over $\nu$. Mathematically we write:
 
-\begin{equation*}
+\begin{equation}\label{gradientTheorem}
     \iint_S p \vec{\bm{dS}} = \iiint_\nu \nabla p\, d\nu
-\end{equation*}\\
+\end{equation}\\
 
 \pagebreak
 
@@ -567,5 +567,47 @@ Lastly, note that in 2D flow in the xy plane, the vorticity is simply:
 \end{equation*}
 
 \subsection{Circulation}
+Consider a velocity field $\vec{\bm{u}}$ and an arbitrary closed curve $C$. The circulation $\Gamma$ is defined as the negative of the line integral around the closed curve. We write:
+
+\begin{equation*}
+    \Gamma = - \oint_C\vec{\bm{u}}\cdot\vec{\bm{dr}}
+\end{equation*} \\
+\noindent
+The significance of circulation will become more clear later on, but it is intrinsically related to lift. In fact, two scientists independently used circulation to discover what is known as the Kutta-Joukowski theorem:
+
+\begin{equation*}
+    L' = \rho_\infty u_\infty \Gamma
+\end{equation*}\\
+\noindent
+Where $L'$ is the lift per unit span. This is a remarkable result and has very useful implications. For instance, given a closed curve $C$ around an airfoil, the airfoil will generate lift if the line integral is non-zero (finite) - that is, if the circulation is finite. \\ \\
+\noindent
+We can make use of a theorem of vector calculus to rewrite circulation in terms of vorticity. Recall Stokes' Theorem \eqref{stokesTheorem} reproduced below:
+
+\begin{equation*}
+    \oint_C \vec{\bm{A}} \cdot \vec{\bm{dr}} = \iint_S (\nabla \times \vec{\bm{A}}) \cdot \vec{\bm{dS}}
+\end{equation*} \\
+\noindent
+So we can rewrite the circulation in terms of vorticity:
+
+\begin{equation*}
+    \Gamma = -\iint_S (\nabla \times \vec{\bm{u}}) \cdot \vec{\bm{dS}} = -\iint_S \vec{\bm{\omega}} \cdot \vec{\bm{dS}}
+\end{equation*} \\
+\noindent
+A powerful result. Lastly, we can write the equation above in differntial form by taking an infinitesimally small control area. We then have:
+
+\begin{equation*}
+    d\Gamma = -\vec{\bm{\omega}}\cdot\vec{\bm{dS}} = -\vec{\bm{\omega}}\cdot\hat{\bm{n}}\,dS
+\end{equation*} \\
+We then arrive at the following result:
+
+\begin{equation*}
+    \vec{\bm{\omega}}\cdot\hat{\bm{n}} = -\frac{d\Gamma}{dS}
+\end{equation*} \\
+\noindent
+So the normal component of vorticity is the circulation per unit area. This will come in handy later.
+\pagebreak
+
+\section{Streamfunction and Velocity Potential}
+
 
 \end{document}
