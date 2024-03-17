@@ -73,16 +73,7 @@ Then the dot product between them is:
 With the geometric meaning that the dot product is the magnitude of the projection of $\vec{\bm{a}}$ onto $\vec{\bm{b}}$, also given by:
 
 \begin{equation*}
-    \vec{\bm{a}} \cdot \vec{\bm{b}} = \bar{\vec{\bm{a}}}\bar{\vec{\bm{b}}}\cos{\theta}
-\end{equation*}
-
-\begin{equation*}
-    \vec{\bm{a}} \cdot \vec{\bm{b}} = \begin{vmatrix}
-        \vec{\bm{a}}
-    \end{vmatrix}\begin{vmatrix}
-        \vec{\bm{b}}
-    \end{vmatrix}
-    \cos{\theta}
+    \vec{\bm{a}} \cdot \vec{\bm{b}} = \lvert\vec{\bm{a}}\rvert \lvert\vec{\bm{b}}\rvert\cos{\theta}
 \end{equation*}
 
 \noindent
@@ -119,12 +110,7 @@ Consider the same vectors as before. The cross product between them is:
 With the geometric meaning that the cross product is a vector normal to both $\vec{\bm{a}}$ and $\vec{\bm{b}}$ and its magnitude is the area formed by the parallellepiped between $\vec{\bm{a}}$ and $\vec{\bm{b}}$. This magnitude is:
 
 \begin{equation*}
-    \vec{\bm{a}} \times \vec{\bm{b}} = \begin{vmatrix}
-        \vec{\bm{a}}
-    \end{vmatrix}\begin{vmatrix}
-        \vec{\bm{b}}
-    \end{vmatrix}
-    \sin{\theta}
+    \vec{\bm{a}} \times \vec{\bm{b}} = \lvert\vec{\bm{a}}\rvert \lvert\vec{\bm{b}}\rvert\sin{\theta}
 \end{equation*}\\
 
 \noindent
@@ -341,7 +327,7 @@ This can be written for various quantities $B$. Most notably:
 The idea is thus to write out Reynold's Transport Theorem for each quantity and, using the theorems of vector calculus (Section 1.7), to write the entire expression in terms of volume integrals. Using a small enough control volume ensures that the integrand is equal to the result of the conservation law. For example, if:
 
 \begin{equation*}
-    \iiint_{\nu}(\frac{\partial\rho}{\partial t} + \nabla \cdot (\rho\vec{\bm{u}}))d\nu = 0
+    \iiint_{\nu}\left(\frac{\partial\rho}{\partial t} + \nabla \cdot (\rho\vec{\bm{u}})\right)d\nu = 0
 \end{equation*}\\
 \noindent
 This ensures that:
@@ -352,12 +338,234 @@ This ensures that:
 \noindent
 For an arbitrarily small control volume.\\ \\
 \noindent
-This is enough for an introduction, and the reader is encouraged to seek literature for the full derivations of the conservation laws. They are simply presented below, and will be used for the derivations in potential flow.
+This is enough for an introduction, and the reader is encouraged to seek literature for the full derivations of the conservation laws. They are simply presented below, and will be used for the derivations in Potential Flow.
 
 \subsection{Conservation of Mass}
+The expression of conservation of mass hinges on the basic physical principle that \emph{mass cannot be created nor destroyed}. In quantitative terms:
+
+\begin{equation*}
+    \textnormal{\{Change of Mass Within CV\}} + \{\textnormal{Net Flux of Mass} \} = 0
+\end{equation*} \\
+\noindent
+Developing this principle with Reynold's Transport Theorem yields:
+
+\begin{equation*}
+    \frac{\partial\rho}{\partial t} + \nabla \cdot (\rho\vec{\bm{u}}) = 0
+\end{equation*}\\
+\noindent
+We can make use of the following property here:
+
+\begin{equation*}
+    \nabla \cdot (\rho \vec{\bm{u}}) = \rho \nabla \cdot \vec{\bm{u}} + \vec{\bm{u}} \cdot \nabla \rho
+\end{equation*}\\
+\noindent
+That is, the divergence of a scalar times a vector is the scalar times the divergence of the vector plus the dot product of the vector and the gradient of the scalar. This allows us to write the conservation law using the total derivative (Section 1.6):
+
+\begin{equation}\label{continuity}
+    \frac{D\rho}{Dt} + \rho \nabla \cdot \vec{\bm{u}} = 0
+\end{equation}\\ 
+\noindent
+Which is a well-known form of the conservation of mass equation. For Potential Flow theory, this is the most important conservation law. This is because Potential Flow makes assumptions that trivialize the full Navier-Stokes equations, such that conservation of momentum and conservation of energy are not of particular importance under the assumptions of Potential Flow. Therefore, know the conservation of mass equation by heart. We will use this soon! \\ \\
+\emph{Note: conservation of mass is commonly referred to as the Continuity Equation. Technically, the word "continuity" simply means "conservation," so any conservation law is, technically, an expression of continuity of some quantity. However, the term is pervasive, and this author might eventually come to refer to the equation as the Continuity Equation.}
 
 
 
 %--/Paper--
+
+\subsection{Conservation of Momentum}
+Let us now express the conservation of momentum. This expression hinges on the following basic physical principle:
+
+\begin{equation*}
+    \{\textnormal{Force}\} = \{\textnormal{Time Rate of Change of Momentum}\}
+\end{equation*}\\
+\noindent
+From this, one must assume what forces act on a fluid parcel. The forces are generally divided into two groups:
+
+\begin{enumerate}
+    \item Surface Forces
+    \item Body Forces
+\end{enumerate}
+\noindent
+The first kind, surface forces, are forces that act on the surface of a fluid parcel. These forces can act perpendicular to or parallel to the surface of the fluid. The forces that act perpendicular to the fluid element's surface are \emph{pressure forces} and those that act parallel to the surface are called \emph{shear forces}.\\ \\
+\noindent
+Body forces are external forces that act on the entire fluid element. It is usually the case that we consider only gravity acting on the body, usually along the $\bm{\hat{z}}$ axis, which is significant for the momentum exchange along that axis.\\ \\
+\noindent
+Let us treat body and surface forces generally. Let $\vec{\bm{f}}$ be the body forces acting on the body, $\vec{\bm{\tau}}$ be the shear stress (force per unit area, parallel to the fluid parcel's surface, so a surface force) and $p$ denote the pressure (perpendicular surface forces) acting on the element. Then:
+
+\begin{equation}\label{momentum}
+    \rho \frac{\partial\vec{\bm{u}}}{Dt} = -\nabla p + \rho \vec{\bm{f}}_{\textnormal{body}} + \vec{\bm{\tau}}_{\textnormal{visc}}
+\end{equation} \\
+\noindent
+Which is a quite general expression for conservation of momentum. From here, we can arrive at the famous Navier-Stokes equations by working out the viscous shear stress in terms of flow-field variables. Namely, we would here introduce viscosity, $\mu$, which we use to write $\vec{\bm{\tau}}$ in terms of flow-field variables. This is beyond the scope of this text since Navier-Stokes is not of particular importance in Potential Flow, as explained in Section 2.1.
+
+\subsection{Conservation of Energy}
+Finally, let us express the conservation of energy. This expression hinges on the basic physical principle that \emph{energy cannot be created nor destroyed, but it may change form}. From the study of thermodynamics, the change in internal energy of a fluid element $de$ is due to the net change of heat and the net work done on or by the fluid. This is the \emph{First Law of Thermodynamics} and, quantitatively, we write:
+
+\begin{equation*}
+    de = \delta q + \delta w
+\end{equation*}\\
+\noindent
+We can therefore write out the change in internal energy, heat, and work done on/by the fluid in terms of surface and volume integrals using Reynold's Transport Theorem. We can then generalize the results for small enough control volumes to get the differential form, as we did for continuity, and rewrite it in terms of the total derivative.\\ \\
+\noindent
+Details of this derivation are beyond the scope here - recall we won't use conservation of energy extensively in Potential Flow - but the reader is once again encouraged to seek out literature for more details. The expression of conservation can be written as:
+
+\begin{equation}\label{energy}
+    \rho \frac{D(e+V^2/2)}{Dt} = \rho \dot{q} - \nabla \cdot (p \vec{\bm{u}}) + \rho (\vec{\bm{f}} \cdot \vec{\bm{u}}) + \dot{Q}_\textnormal{visc}' + \dot{W}_\textnormal{visc}'
+\end{equation}\\
+Which is a general form of the energy equation in terms of the total derivative $\frac{D(e+V^2/2)}{Dt}$.
+\pagebreak
+
+\section{Pathlines and Streamlines}
+We have thus far investigated the flow-field variables and the relationship between them through conservation laws. However, we are often concerned in observing \emph{where} the flow is going visually. Pathlines and Streamlines are tools to accomplish just that. Let us now investigate the two conceptually and quantitatively.
+
+\subsection{Qualitative Description}
+Consider first an unsteady flow, that is, flow where the velocity changes with space \emph{and} time such that $\vec{\bm{u}} = \vec{\bm{u}}(x, y, z, t)$. Let us look at a fluid element A going through a point in the fluid flow. Let us now take several pictures of this fluid element and trace the path that it follows through space. It might look something like this (diagram from Anderson's \emph{Fundamentals of Aerodynamics, 6$^{th}$ edition}): \\ \\
+
+IMAGE HERE \\ \\ 
+\noindent
+Now let time pass a bit and again take a look at a fluid element going through the \emph{same point in space}. This time we are looking at a different fluid element, say B. Let us do the same thing: observe its motion and take several photographs, tracing the path it follows through space. It might look like this (diagram from Anderson's again): \\ \\
+
+IMAGE HERE \\ \\
+\noindent
+Notice that the paths traced by the two fluid elements are different! This makes sense: the velocity field is a function of time, so the two separate fluid elements that go through the same point at different times will travel through completely different velocity fields. \\ \\
+\noindent
+The lines we just traced are called \emph{pathlines}, and they are the paths traced by fluid elements that go through the same point in space. Note how \emph{pathlines of different fluid elements are different from each other in unsteady flow}.\\ \\
+\noindent
+Let's instead do another experiment. Instead of taking several pictures of the fluid element, let us take only one picture. Imagine also that we are an omnipotent being such that we know the flow variables everywhere always. For that one instant we can trace a line that is tangent to the velocity field everywhere. \emph{This line is the streamline}. The key difference here is that the streamline is a snapshot - we are only looking at one picture! If we take another picture after the fluid element moves a bit, then the velocity field will have changed completely (it is a function of time!) so the streamline will have changed too. Just as Anderson puts it:
+
+\begin{quote}
+    \emph{You can visualize a pathline as a time-exposure photograph of a given fluid element, whereas a streamline pattern is like a single frame of a motion picture of the flow. In an unsteady flow, the streamline pattern changes; hence, each “frame” of the motion picture is different.} - Anderson's Fundamentals of Aerodynamics, 6$^{th}$ edition
+\end{quote}
+\noindent
+Let us instead consider the case of \emph{steady flow}. Repeating the two experiments, we will notice that:
+
+\begin{enumerate}
+    \item The pathlines for two different fluid elements going through the same point are the same and;
+    \item The pathlines coincide with the streamline
+\end{enumerate}
+This is intuitive: the velocity field is now independent of time, so two fluid elements going through the same point at different times will follow the same path! Also, if we take a snapshot at any time of the flow, the velocity field is the same, so the streamlines don't change in time and match the pathlines exactly. \\ \\
+\noindent
+We will later want to plot streamlines for different Potential Flows. It is useful, therefore, to have some quantitative description of these curves - ideally, we would want an equation for them. Let us find just that.
+
+\subsection{Quantitative Description of Streamlines}
+Consider a particle moving through space in steady flow. The streamline is represented below: \\ \\
+
+IMAGE HERE \\ \\
+\noindent
+By definition, the streamline is tangent to the velocity vector everywhere. Let $\vec{\bm{ds}}$ be the infinitesimal displacement of the fluid element, and $\vec{\bm{u}}$ be the velocity vector at that point in space. Let's use the following identity of cross products: if $\vec{\bm{A}}$ and $\vec{\bm{B}}$ are parallel, then $\vec{\bm{A}} \times \vec{\bm{B}} = 0$. For the streamline, this implies that:
+
+\begin{equation*}
+    \vec{\bm{u}} \times \vec{\bm{ds}} = 0
+\end{equation*}\\
+\noindent
+Everywhere in the flow-field. The velocity and displacement vectors are:
+
+\begin{equation*}
+    \vec{\bm{u}} =  \begin{bmatrix}
+        u \\
+        v \\
+        w \\     
+        \end{bmatrix}
+\end{equation*}
+
+\begin{equation*}
+    \vec{\bm{ds}} =  \begin{bmatrix}
+        dx \\
+        dy \\
+        dz \\     
+        \end{bmatrix}
+\end{equation*} \\ 
+\noindent
+And so their cross product is:
+
+\begin{equation*}
+    \begin{bmatrix}
+        u \\
+        v \\
+        w \\     
+    \end{bmatrix} \times \begin{bmatrix}
+            dx \\
+            dy \\
+            dz \\     
+    \end{bmatrix} = \begin{vmatrix}
+        \hat{i} & \hat{j} & \hat{k} \\
+        u & v & w \\
+        dx & dy & dz
+    \end{vmatrix} = \begin{bmatrix}
+        v\,dz - w\,dy \\
+        w\,dx - u\,dz \\
+        u\,dy - v\,dx \\     
+        \end{bmatrix} = 0
+\end{equation*} \\ 
+\noindent
+Therefore, each element must be zero, and we have:
+
+\begin{equation*}
+    \begin{matrix}
+        v\,dz - w\,dy = 0\\
+        w\,dx - u\,dz = 0\\
+        u\,dy - v\,dx = 0\\ 
+    \end{matrix}
+\end{equation*}\\
+\noindent
+The expressions above are differential equations for the streamline, and can be integrated in space to find the equation for the streamline. Remarkably simple! \\ \\
+\noindent
+We are particularly interested in 2D flow in the xy plane. In that case, the differential equation for a streamline is simply:
+
+\begin{equation*}
+    \frac{dy}{dx} = \frac{v}{u}
+\end{equation*} \\
+\noindent
+Which can also be written as:
+
+\begin{equation*}
+    v\,dx - u\,dy = 0
+\end{equation*}
+\pagebreak
+
+\section{Vorticity and Circulation}
+Two additional tools are introduced below, which are the vorticity and circulation. The vorticity is closely related to how rotational a flow is - or the angular velocity that a fluid element develops as it moves along a flow-field. Circulation is closely related to the generation of lift, as will later be revealed.
+
+\subsection{Angular Velocity and Vorticity}
+Consider a fluid element moving through a streamline and let us ignore the presence or absence of shear stresses, that is, let us not look at the forces (dynamics) but solely at the motion (kinematics) of the parcel. \\ \\
+\noindent
+The fluid element's motion is a combination of translation (changing x, y, and z location), rotation, and deformation. The figure below illustrates what that might look like: \\ \\ 
+
+IMAGE HERE \\ \\ 
+\noindent
+It is fruitful for us to try to quantitatively describe the rotation of the fluid element. It can be shown that the angular velocity $\vec{\bm{\zeta}}$ of a fluid element in a velocity field $\vec{\bm{u}} = \vec{\bm{u}}(x, y, z)$ is:
+
+\begin{equation*}
+    \vec{\bm{\zeta}} = \frac{1}{2}\left[\left(\frac{\partial w}{\partial y} - \frac{\partial v}{\partial z}\right)\hat{\bm{i}} + \left(\frac{\partial u}{\partial z} - \frac{\partial w}{\partial x}\right)\hat{\bm{j}}+\left(\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}\right)\hat{\bm{k}}\right]
+\end{equation*}\\
+\noindent
+Notice the similarity to a cross product here. In fact, the quantity $2\vec{\bm{\zeta}}$ appears so frequently that it is useful to define a new quantity, the \emph{vorticity} $\vec{\bm{\omega}}$:
+
+\begin{equation*}
+    \vec{\bm{\omega}} = 2\vec{\bm{\zeta}}
+\end{equation*} \\ 
+\noindent
+And note from the expression above that:
+
+\begin{equation*}
+    \vec{\bm{\omega}} = \nabla \times \vec{\bm{u}}
+\end{equation*}\\
+\noindent
+That is, \emph{the vorticity is simply the curl of the velocity} and is closely related to the angular velocity developed by a fluid element. We can now speak of the rotationality of the flow, that is, we have created two categories of flow:
+
+\begin{enumerate}
+    \item Rotational Flow: $\vec{\bm{\omega}} \neq 0$
+    \item Irrotational Flow: $\vec{\bm{\omega}} = 0$
+\end{enumerate}
+\noindent
+And the physical meaning being that in rotational flow, the fluid elements does not maintain its orientation along a streamline, but in irrotational flow it does. Also, it can be shown that \emph{all viscous flow is rotational}, which is somewhat intuitive due to the presence of shear stresses creating moment couples in the fluid element. \\ \\
+\noindent
+Lastly, note that in 2D flow in the xy plane, the vorticity is simply:
+
+\begin{equation*}
+    \vec{\bm{\omega}} = \left( \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y} \right) \hat{\bm{k}}
+\end{equation*}
+
+\subsection{Circulation}
 
 \end{document}

@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1710670422.36061 "c:/Users/david/AeroPython/DSPotential/theory.tex" "theory.pdf" "theory" 1710670422.79942 0
-  "c:/Users/david/AeroPython/DSPotential/theory.tex" 1710670421 18162 87a34ff335770137c636570b92a92ec6 ""
+["pdflatex"] 1710697449.75968 "c:/Users/david/AeroPython/DSPotential/theory.tex" "theory.pdf" "theory" 1710697450.27782 0
+  "c:/Users/david/AeroPython/DSPotential/theory.tex" 1710697449 32390 2fdab7728c23a3c64e40cb84b49bce59 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1709983022 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1709983022 1120 200be8b775682cdf80acad4be5ef57e4 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1709983022 1004 54797486969f23fa377b128694d548df ""
@@ -40,7 +40,10 @@
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1709983022 35752 024fb6c41858982481f6968b5fc26508 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1709983022 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1709983022 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
+  "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1709983022 32734 69e00a6b65cedb993666e42eedb3d48f ""
+  "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1709983022 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1709983022 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1709983022 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1709983022 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1709983022 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1709983022 13829 94730e64147574077f8ecfea9bb69af4 ""
@@ -52,6 +55,7 @@
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty" 1709983022 4474 b811654f4bf125f11506d13d13647efb ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty" 1709983022 2444 0d0c1ee65478277e8015d65b86983da2 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls" 1709983034 20144 147463a6a579f4597269ef9565205cfe ""
+  "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/omscmr.fd" 1709983036 2469 74341109f164f230581718c66211c718 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size11.clo" 1709983036 8464 59874a3b0776c73e2a138b025d8473dd ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1709983034 30006 3d512c0edd558928ddea1690180ef77e ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/bm.sty" 1709983054 13231 2c742011581e2bf297e33520567d9464 ""
@@ -59,8 +63,8 @@
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1709983082 94259 aec9939469efac8f0cf917369f632359 ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1709983088 6812498 97cf619dd73c227156607b0fd1a8ab1e ""
   "c:/Users/david/AppData/Roaming/TinyTeX/texmf.cnf" 1709983002 903 164c5b127cd0d6dc91abad2f62421ea2 ""
-  "theory.aux" 1710670422 1757 a6294f1f3c5e57bc2e1fab3fb4f15728 "pdflatex"
-  "theory.tex" 1710670421 18162 87a34ff335770137c636570b92a92ec6 ""
+  "theory.aux" 1710697450 2800 6ae1cc2b9259060f6fcd9212d21bd1ee "pdflatex"
+  "theory.tex" 1710697449 32390 2fdab7728c23a3c64e40cb84b49bce59 ""
   (generated)
   "theory.aux"
   "theory.log"
