@@ -607,7 +607,186 @@ We then arrive at the following result:
 So the normal component of vorticity is the circulation per unit area. This will come in handy later.
 \pagebreak
 
-\section{Streamfunction and Velocity Potential}
+\section{Stream Function and Velocity Potential}
+Lastly, we are ready to introduce the last tools we need to explore Potential Flow and its solutions. These are the streamfunctions and velocity potentials. These are useful tools in working out the kinematics of the flow, and are closely related to the conservation laws and assumptions of Potential Flow.
 
+\subsection{Stream Function}
+Stream Functions are closely related to streamlines as shown below. Recall the equation of a streamline for 2D flow in the xy plane, the simplifying case that we will consider from now on:
+
+\begin{equation*}
+    \frac{dy}{dx} = \frac{v}{u}
+\end{equation*} \\
+\noindent
+This is a differential equation. Integrating it will yield some function of $x$ and $y$ plus some constant, such that:
+
+\begin{equation*}
+    f(x,y) = c
+\end{equation*} \\
+\noindent
+This function is none other than the function defining a streamline. We will now call it the stream function and denote it by $\psi$ such that:
+
+\begin{equation*}
+    \psi(x,y) = c
+\end{equation*} \\
+\noindent
+Meaning that in order to get the equation of a streamline we must set the stream function to a constant. In other words, \emph{lines of constant stream function are streamlines}.\\ \\
+\noindent
+What is, then, the stream function equal to? The derivation of stream functions is beyond the scope of this text, but the results below can be shown by analyzing streamlines and applying conservation of mass along them. Keep this assumption in mind - that mass is conserved. It can thus be shown that: \\
+
+\begin{equation}\label{streamfunctions}
+    \begin{matrix}
+        u = \frac{\partial \psi}{\partial y} \\ \\
+        v = -\frac{\partial \psi}{\partial x}
+    \end{matrix}
+\end{equation}\\ \\
+\noindent
+So the stream function can be found by integrating the above differential equations if the velocity field is known. This is not always the case but, in Potential Flow, we will investigate a few key fundamental flows whose velocity fields are known and, by supperposing several of them, we will obtain more complex flows. This will become more clear later.\\ \\
+\noindent
+Some of these key fundamental flows are more conveniently expressed not in terms of $u$ and $v$ (cartesian coordinates) but rather in terms of radial and angular components of velocity, that is, $u_r$ and $u_\theta$. It is therefore useful to introduce these velocities in terms of the stream functions, which is very similar to the above but adjusted for the transformation (Jacobian). We have:
+
+\begin{equation}\label{streamfunctionspolar}
+    \begin{matrix}
+        u_r = \frac{1}{r}\frac{\partial\psi}{\partial\theta} \\ \\
+        u_\theta = -\frac{\partial\psi}{\partial r}
+    \end{matrix}
+\end{equation}\\ \\
+\noindent
+Are the radial and angular velocities in terms of the stream function in polar coordinates.\\ \\
+\noindent
+Lastly, some further insight can be obtained from the derivation of the stream function (which the reader is encouraged to seek out.) It can be shown that the difference between two adjacent constant stream functions, that is, between two streamlines given by:
+
+\begin{equation*}
+    \Delta\psi = c_2 - c_1
+\end{equation*}\\ 
+\noindent
+Is numerically the \emph{volume flow per unit depth} between the two streamlines. In SI, it has units of cubic meters per second per meter perpendicular into the page, or simply $m^2/s$.\\ \\
+\noindent
+It is also important to note that (\ref{streamfunctions}) and (\ref{streamfunctionspolar}) define the stream functions for incompressible flow. In the case of compressible flow, we would have $\rho u = \partial \bar{\psi} / \partial y$ and $\rho v = -\partial \bar{\psi} / \partial x$ where the "bar" is used to distinguish between the compressible and incompressible stream functions, since $\psi = \bar{\psi} / \rho$
+
+\subsection{Stream Function and Conservation of Mass}
+This insight is of particular importance so it deserves its own subsection, despite it being somewhat short. \\ \\
+\noindent
+Recall the differential form of conservation of mass (\ref{continuity}):
+
+\begin{equation*}
+    \frac{D\rho}{Dt} + \rho\nabla \cdot \vec{\bm{u}} = 0
+\end{equation*}\\
+\noindent
+For incompressible flow, that is, constant density, it is easy ton see that the above is reduced to:
+
+\begin{equation*}
+    \nabla \cdot \vec{\bm{u}} = 0
+\end{equation*}\\
+\noindent
+In 2D flow in the xy plane, the divergence of the velocity is simply
+
+\begin{equation*}
+    \nabla \cdot \vec{\bm{u}} = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}
+\end{equation*}\\ 
+\noindent
+Let's write this in terms of the stream function that we just found. Subtituting $u = \frac{\partial \psi}{\partial y}$ and $v = -\frac{\partial \psi}{\partial x}$ gives:
+
+\begin{equation*}
+    \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} = \frac{\partial^2\psi}{\partial x \partial y} - \frac{\partial^2\psi}{\partial x \partial y} = 0
+\end{equation*} \\ 
+\noindent
+Which satisfies the continuity equation! This is an important result: \emph{the stream function, by definition, satisfies conservation of mass.} In other words, if a stream function exists everywhere for a velocity field $\vec{\bm{u}}$ then the velocity field satisfies conservation of mass everywhere. The converse is also true: if a velocity field satisfies conservation of mass everywhere, then there must exist a stream function $\psi(x,y)$.
+
+\subsection{Velocity Potential}
+Just as the stream function automatically satisfies the continuity condition, we can try to satisfy other conditions to find equations that govern flow under certain assumptions. Let us do this for the case of vorticity.\\ \\
+\noindent
+Recall vorticity is simply the curl of velocity, $\vec{\bm{\omega}} = \nabla \times \vec{\bm{u}}$. Therefore, for irrotational flow, the following must be true:
+
+\begin{equation*}
+    \nabla \times \vec{\bm{u}} = 0
+\end{equation*}\\
+\noindent
+Let us now make use of the following useful identity in vector algebra: the curl of the gradient of a scalar is zero. That is, for a scalar-valued function $\phi$ it is true that:
+
+\begin{equation*}
+    \nabla \times (\nabla\phi) = 0
+\end{equation*}\\
+\noindent
+This leads to the following useful conclusion: \emph{if the velocity} $\vec{\bm{u}}$ \emph{can be written in terms of the gradient of a vector-valued function everywhere, then we guarantee that the velocity field is irrotational everywhere!} We therefore define a scalar-valued \emph{velocity potential} $\phi(x,y)$ such that:
+
+\begin{equation}\label{velocitypotential}
+    \vec{\bm{u}} = \nabla \phi
+\end{equation}\\
+\noindent
+Whose existence implies irrotationality. The converse is also true: irrotationality implies the existence of a velocity potential $\phi$. We can therefore write:
+
+\begin{equation*}
+    \begin{matrix}
+        u = \frac{\partial \phi}{\partial x} \\ \\
+        v = \frac{\partial \phi}{\partial y} \\ \\
+        w = \frac{\partial \phi}{\partial z}
+    \end{matrix}
+\end{equation*}\\
+\noindent
+Are the velocity field components in terms of the velocity potential, such that if the velocity components are known the potential can be found by integrating the above differential equations. They can also be written in polar coordinates much like we did for stream functions:
+
+\begin{equation*}
+    \begin{matrix}
+        u_r = \frac{\partial \phi}{\partial r} \\ \\
+        u_\theta = \frac{1}{r}\frac{\partial \phi}{\partial \theta}
+    \end{matrix}
+\end{equation*}
+
+\subsection{Relation between $\bm{\psi(x,y)}$ and $\bm{\phi(x,y)}$}
+The stream function and velocity potential are intrinsically related. However, it is important to point out a few key distinctions between the two:
+
+\begin{enumerate}
+    \item We obtain $\vec{\bm{u}}$ by differentiating the velocity potential $\phi$ in the same direction as the velocity. However, we must differentiate $\psi$ in the direction normal to the velocity to obtain $\vec{\bm{u}}$;
+    \item The stream function is defined for both rotational and irrotational flows. However, \emph{the velocity potential is defined for irrotational flow only};
+    \item The velocity potential applies to 3D flow, whereas the stream function is defined only for 2D flow.
+\end{enumerate}
+\noindent
+Despite these differences, there is a key connection between stream functions and velocity potentials. Consider 2D, irrotational (there exists a potential) and incompressible flow. The stream lines are lines of constant $\psi$, which implies that the total differential $d\psi = 0$. But the total differential is:
+
+\begin{equation*}
+    d\psi = \frac{\partial \psi}{\partial x}dx + \frac{\partial \psi}{\partial y}dy = 0
+\end{equation*}\\
+\noindent
+Substituting $\partial \psi / \partial x$ and $\partial \psi / \partial y$:
+
+\begin{equation*}
+    -v\,dx + u\,dy = 0
+\end{equation*}\\
+\noindent
+Rearranging to find $dy/dx$, that is, the slope of the line of constant stream function yields:
+
+\begin{equation*}
+    \left( \frac{dy}{dx} \right)_{\psi = \textnormal{const}} = \frac{v}{u}
+\end{equation*}\\
+\noindent
+Which should look familiar - this is the differential equation for a streamline which we obtained by setting $\psi$ to a constant, as expected.\\ \\
+\noindent
+Let us now do the same for a line of constant potential, $d\phi = 0$. This yields an interesting result. Expanding the differential:
+
+\begin{equation*}
+    d\phi = \frac{\partial \phi}{\partial x}dx + \frac{\partial \phi}{\partial y}dy = 0
+\end{equation*} \\ 
+\noindent
+Substituting the velocity potential derivatives:
+
+\begin{equation*}
+    u\,dx + v\,dy = 0
+\end{equation*}\\
+\noindent
+Finally, solving for $dy/dx$ gives:
+
+\begin{equation*}
+    \left( \frac{dy}{dx} \right)_{\phi = \textnormal{const}}=-\frac{u}{v}
+\end{equation*}\\
+Which gives the fascinating fact that:
+
+\begin{equation*}
+    \left( \frac{dy}{dx} \right)_{\phi = \textnormal{const}} = -\frac{1}{\left( dy/dx \right)_{\psi=\textnormal{const}}}
+\end{equation*}\\
+\noindent
+In other words, \emph{streamlines ($\psi = \textnormal{const}$) and equipotential lines ($\phi = \textnormal{const}$) are mutually perpendicular!} Which is quite insightful.
+
+\section{Potential Flow}
+We are now ready to explore Potential Flow and its solutions.
 
 \end{document}
