@@ -318,8 +318,45 @@ An analogous theorem exists for the gradient of a scalar field. Consider again a
 \end{equation*}\\
 
 \pagebreak
+
 \section{Differential Form of Conservation Laws}
-Lorem Ipsum \\
+We are now ready to introduce the conservation laws that govern fluid flow. Although I will not go into the full derivation for the laws below, a brief introduction into how they come to be is presented below. The analysis below is conducted in the frame of an arbitrary control volume. A control volume is a closed region in space in which we analyze the change in given quantities - in our case, we are particularly interested in mass, momentum, and energy. Therefore, in the text below, when the phrase "the change of quantity B" is said, it really means "the change of quantity B within the control volume chosen for our analysis." This is for the sake of physical rigidity.\\ \\
+\noindent
+Consider a differential ammount (given a small control volume) of quantity $B$, that is, $dB$. The quantity per unit mass, $\frac{dB}{dm}$, is said to be an \emph{intensive} quantity, while $dB$ is said to be an \emph{extensive} quantity. For the laws below, we are interested in expressing the conservation of $B$ within a control volume. It can be stated that the change of $B$ comes from two sources: changes of $B$ \emph{within} the control volume and changes of $B$ \emph{through} the control volume. An example is the amount of elephants in a zoo: the total change in number of elephants in the zoo is within the zoo, that is, through the birth and death of elephants, as well as through the zoo, that is, elephants leaving and entering the zoo.\\ \\
+\noindent
+This general statement of conservation is known as \emph{Reynold's Transport Theorem}. The change within the control volume is given by the time rate of change of the extensive quantity $B$ within the control volume, while the change through the control volume is given by the flux of the intensive quantity $\frac{dB}{dm}$ through the control volume. The theorem is given by:
+
+\begin{equation*}
+    \frac{dB}{dt} = \frac{d}{dt}\iiint_{\nu}\rho \beta d\nu + \iint_{S}\rho\beta (\vec{\bm{u}} \cdot \vec{\bm{n}}) dS
+\end{equation*} \\
+
+\noindent
+Where the first term is the time rate of change of $B$ within the control volume and the second term is the flux of $B$ through the control surface (the surface within which the volume is bounded.) \\ \\
+This can be written for various quantities $B$. Most notably:
+\begin{enumerate}
+    \item MASS: $B = m \implies \beta = 1$ \\
+    \item MOMENTUM: $B = m\vec{\bm{u}} \implies \beta = \vec{\bm{u}}$ \\
+    \item ENERGY: $B = E \implies \beta = e = E/m$ \\
+\end{enumerate}
+The idea is thus to write out Reynold's Transport Theorem for each quantity and, using the theorems of vector calculus (Section 1.7), to write the entire expression in terms of volume integrals. Using a small enough control volume ensures that the integrand is equal to the result of the conservation law. For example, if:
+
+\begin{equation*}
+    \iiint_{\nu}(\frac{\partial\rho}{\partial t} + \nabla \cdot (\rho\vec{\bm{u}}))d\nu = 0
+\end{equation*}\\
+\noindent
+This ensures that:
+
+\begin{equation*}
+    \frac{\partial\rho}{\partial t} + \nabla \cdot (\rho\vec{\bm{u}}) = 0
+\end{equation*}\\
+\noindent
+For an arbitrarily small control volume.\\ \\
+\noindent
+This is enough for an introduction, and the reader is encouraged to seek literature for the full derivations of the conservation laws. They are simply presented below, and will be used for the derivations in potential flow.
+
+\subsection{Conservation of Mass}
+
+
 
 %--/Paper--
 
