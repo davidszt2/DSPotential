@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.9)  17 MAR 2024 18:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.9)  18 MAR 2024 04:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -105,6 +105,24 @@ Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
 Package bm Info: No bold for \U/msa/m/n, using \pmb.
 Package bm Info: No bold for \U/msb/m/n, using \pmb.
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+ (c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+) (c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+ (c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen150
+\Gin@req@width=\dimen151
 ) (c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count274
@@ -126,6 +144,12 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
+ (c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
 LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
  (c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -326,160 +350,160 @@ Underfull \hbox (badness 10000) in paragraph at lines 422--423
 
  []
 
+<elementApathline.png, id=48, 190.91325pt x 63.8385pt>
+File: elementApathline.png Graphic file (type png)
+<use elementApathline.png>
+Package pdftex.def Info: elementApathline.png  used on input line 425.
+(pdftex.def)             Requested size: 190.91278pt x 63.83833pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--427
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 424--427
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 424--427
+Underfull \hbox (badness 10000) in paragraph at lines 428--430
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--435
+Underfull \hbox (badness 10000) in paragraph at lines 428--430
+
+ []
+
+<elementBpathline.png, id=50, 193.32225pt x 63.8385pt>
+File: elementBpathline.png Graphic file (type png)
+<use elementBpathline.png>
+Package pdftex.def Info: elementBpathline.png  used on input line 432.
+(pdftex.def)             Requested size: 193.32178pt x 63.83833pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--441
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--435
+Underfull \hbox (badness 10000) in paragraph at lines 435--441
+
+ []
+
+[11 <./elementApathline.png> <./elementBpathline.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 452--455
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--435
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 446--449
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--452
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
+
+ []
+
+<streamline.png, id=56, 271.0125pt x 109.6095pt>
+File: streamline.png Graphic file (type png)
+<use streamline.png>
+Package pdftex.def Info: streamline.png  used on input line 460.
+(pdftex.def)             Requested size: 271.01183pt x 109.6092pt.
+[12 <./streamline.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 518--523
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 539--542
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--452
+Underfull \hbox (badness 10000) in paragraph at lines 539--542
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--456
+Underfull \hbox (badness 10000) in paragraph at lines 539--542
+
+ []
+
+<elementrottrans.png, id=65, 230.0595pt x 135.50626pt>
+File: elementrottrans.png Graphic file (type png)
+<use elementrottrans.png>
+Package pdftex.def Info: elementrottrans.png  used on input line 544.
+(pdftex.def)             Requested size: 230.05893pt x 135.5059pt.
+[14 <./elementrottrans.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 572--576
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 509--514
+Underfull \hbox (badness 10000) in paragraph at lines 592--597
 
  []
 
-[12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 530--533
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 530--533
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 642--647
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 530--533
+Underfull \hbox (badness 10000) in paragraph at lines 642--647
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--537
+Underfull \hbox (badness 10000) in paragraph at lines 653--658
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 560--564
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 580--585
-
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 630--635
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 630--635
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 641--646
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 641--646
-
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 652--657
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 652--657
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 660--665
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 667--670
+Underfull \hbox (badness 10000) in paragraph at lines 653--658
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 696--699
+Underfull \hbox (badness 10000) in paragraph at lines 664--669
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--669
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 672--677
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 679--682
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 760--765
+Underfull \hbox (badness 10000) in paragraph at lines 708--711
 
  []
 
-[19] [20] (./theory.aux)
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 772--777
+
+ []
+
+[20] [21] (./theory.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1860 strings out of 476075
- 26904 string characters out of 5790814
- 1940190 words of memory out of 5000000
- 23983 multiletter control sequences out of 15000+600000
+ 2418 strings out of 476075
+ 36459 string characters out of 5790814
+ 1941190 words of memory out of 5000000
+ 24513 multiletter control sequences out of 15000+600000
  569903 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,8n,65p,826b,218s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,8n,65p,826b,220s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/Users/david/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on theory.pdf (20 pages, 233983 bytes).
+Output written on theory.pdf (21 pages, 304897 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 151 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

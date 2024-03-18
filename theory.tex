@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 
-\usepackage{amsmath, amssymb, bm}
+\usepackage{amsmath, amssymb, bm, graphicx}
 
 % Margins
 \topmargin=-0.45in
@@ -421,13 +421,19 @@ We have thus far investigated the flow-field variables and the relationship betw
 \subsection{Qualitative Description}
 Consider first an unsteady flow, that is, flow where the velocity changes with space \emph{and} time such that $\vec{\bm{u}} = \vec{\bm{u}}(x, y, z, t)$. Let us look at a fluid element A going through a point in the fluid flow. Let us now take several pictures of this fluid element and trace the path that it follows through space. It might look something like this (diagram from Anderson's \emph{Fundamentals of Aerodynamics, 6$^{th}$ edition}): \\ \\
 
-IMAGE HERE \\ \\ 
+\begin{figure}[h]
+    \includegraphics{elementApathline.png}
+    \centering
+\end{figure}
 \noindent
-Now let time pass a bit and again take a look at a fluid element going through the \emph{same point in space}. This time we are looking at a different fluid element, say B. Let us do the same thing: observe its motion and take several photographs, tracing the path it follows through space. It might look like this (diagram from Anderson's again): \\ \\
+\\Now let time pass a bit and again take a look at a fluid element going through the \emph{same point in space}. This time we are looking at a different fluid element, say B. Let us do the same thing: observe its motion and take several photographs, tracing the path it follows through space. It might look like this (diagram from Anderson's again): \\ \\
 
-IMAGE HERE \\ \\
+\begin{figure}[h]
+    \includegraphics{elementBpathline.png}
+    \centering
+\end{figure}
 \noindent
-Notice that the paths traced by the two fluid elements are different! This makes sense: the velocity field is a function of time, so the two separate fluid elements that go through the same point at different times will travel through completely different velocity fields. \\ \\
+\\Notice that the paths traced by the two fluid elements are different! This makes sense: the velocity field is a function of time, so the two separate fluid elements that go through the same point at different times will travel through completely different velocity fields. \\ \\
 \noindent
 The lines we just traced are called \emph{pathlines}, and they are the paths traced by fluid elements that go through the same point in space. Note how \emph{pathlines of different fluid elements are different from each other in unsteady flow}.\\ \\
 \noindent
@@ -450,9 +456,12 @@ We will later want to plot streamlines for different Potential Flows. It is usef
 \subsection{Quantitative Description of Streamlines}
 Consider a particle moving through space in steady flow. The streamline is represented below: \\ \\
 
-IMAGE HERE \\ \\
+\begin{figure}[h]
+    \includegraphics{streamline.png}
+    \centering
+\end{figure}
 \noindent
-By definition, the streamline is tangent to the velocity vector everywhere. Let $\vec{\bm{ds}}$ be the infinitesimal displacement of the fluid element, and $\vec{\bm{u}}$ be the velocity vector at that point in space. Let's use the following identity of cross products: if $\vec{\bm{A}}$ and $\vec{\bm{B}}$ are parallel, then $\vec{\bm{A}} \times \vec{\bm{B}} = 0$. For the streamline, this implies that:
+\\By definition, the streamline is tangent to the velocity vector everywhere. Let $\vec{\bm{ds}}$ be the infinitesimal displacement of the fluid element, and $\vec{\bm{u}}$ be the velocity vector at that point in space. Let's use the following identity of cross products: if $\vec{\bm{A}}$ and $\vec{\bm{B}}$ are parallel, then $\vec{\bm{A}} \times \vec{\bm{B}} = 0$. For the streamline, this implies that:
 
 \begin{equation*}
     \vec{\bm{u}} \times \vec{\bm{ds}} = 0
@@ -531,7 +540,10 @@ Consider a fluid element moving through a streamline and let us ignore the prese
 \noindent
 The fluid element's motion is a combination of translation (changing x, y, and z location), rotation, and deformation. The figure below illustrates what that might look like: \\ \\ 
 
-IMAGE HERE \\ \\ 
+\begin{figure}[h]
+    \includegraphics{elementrottrans.png}
+    \centering
+\end{figure}
 \noindent
 It is fruitful for us to try to quantitatively describe the rotation of the fluid element. It can be shown that the angular velocity $\vec{\bm{\zeta}}$ of a fluid element in a velocity field $\vec{\bm{u}} = \vec{\bm{u}}(x, y, z)$ is:
 
