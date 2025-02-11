@@ -5,11 +5,12 @@ DSPotential
 """
 
 import numpy as np
+from PotentialFlows.PotentialSolution import PotentialSolution
 from PotentialFlows.SourceSink import SourceSink
 from PotentialFlows.Uniform import UniformFlow
 
 
-class RankineSemiOval():
+class RankineSemiOval(PotentialSolution):
     def __init__(self, ovalHalfHeight, uniformStrength, uniformAngle=0, sourceX=0, sourceY=0):
         """
         Initializes the Rankine Oval

@@ -34,6 +34,12 @@ uUniform1, vUniform1 = uniform1.velocityField(X, Y)
 uSemiOval1, vSemiOval1 = semiOval1.velocityField(X, Y)
 uOval1, vOval1 = oval1.velocityField(X, Y)
 
+plt.figure()
+uTotal = uSource1 + uUniform1
+vTotal = vSource1 + vUniform1
+plt.streamplot(X, Y, uTotal, vTotal, density=2, linewidth=1, arrowsize=2, arrowstyle='->')
+plt.scatter(source1.x, source1.y, color='r', marker='o', s=80)
+
 """EXAMPLE 1: SOURCE FLOW"""
 plt.figure()
 plt.title("Example 1: Source")

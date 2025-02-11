@@ -5,8 +5,9 @@ DSPotential
 """
 
 import numpy as np
+from PotentialFlows.PotentialSolution import PotentialSolution
 
-class SourceSink():
+class SourceSink(PotentialSolution):
     def __init__(self, strength, x, y):
         """
         Initializes the source/sink

@@ -5,8 +5,9 @@ DSPotential
 """
 
 import numpy as np
+from PotentialFlows.PotentialSolution import PotentialSolution
 
-class UniformFlow():
+class UniformFlow(PotentialSolution):
     def __init__(self, strength, angle):
         """
         Initializes the uniform flow
